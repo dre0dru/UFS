@@ -1,0 +1,4 @@
+﻿{
+  "name": "Game",
+  "references":[ "GUID:d8c99b66ad1172b4bbe647b371538537", "GUID:aad1b4dd49cc40c09befe278b75fcdae" ]
+}
