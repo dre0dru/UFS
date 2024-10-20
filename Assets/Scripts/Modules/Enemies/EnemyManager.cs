@@ -6,6 +6,8 @@ using UnityEngine;
 
 namespace Modules.Enemies
 {
+    //Опять же нарушаю SRP (две ответственности: спавн по таймеру и атака пулями), как в BulletSystem ради упрощения,
+    //так как деление на 3 класса (коллекция врагов, спавнер по таймеру, атакер пулями) имхо усложнит чтение/понимание
     public sealed class EnemyManager : MonoBehaviour
     {
         [SerializeField]
