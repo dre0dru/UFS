@@ -165,6 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bb7de7bd41481facc99b718fd3427f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletSystem: {fileID: 0}
+  _bulletConfig: {fileID: 11400000, guid: 7138ae5d32d814e0ca50c616c65ea105, type: 2}
   _firePoint: {fileID: 3926786963072264220}
 --- !u!114 &5702072702958793608
 MonoBehaviour:

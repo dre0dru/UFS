@@ -180,6 +180,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bb7de7bd41481facc99b718fd3427f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bulletSystem: {fileID: 0}
+  _bulletConfig: {fileID: 11400000, guid: cebb019d012fa8c4d8e7411cf152f898, type: 2}
   _firePoint: {fileID: 3195880656587174614}
 --- !u!114 &7515976342781086347
 MonoBehaviour:

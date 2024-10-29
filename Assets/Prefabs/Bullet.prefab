@@ -164,6 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 3555983760417175357}
   _spriteRenderer: {fileID: 407317769854222589}
+  _teamComponent: {fileID: 3863452370503241139}
 --- !u!114 &3863452370503241139
 MonoBehaviour:
   m_ObjectHideFlags: 0
