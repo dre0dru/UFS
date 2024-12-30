@@ -301,4 +301,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _icon: {fileID: 4603339340333858954}
   _countText: {fileID: 3299675748291971791}
-  _animationDuration: 0.5
+  _targetParticleTransform: {fileID: 6204055655084186918}

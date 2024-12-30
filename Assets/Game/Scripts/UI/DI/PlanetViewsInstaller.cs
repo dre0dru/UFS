@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Game.Scripts.UI.Planets;
+﻿using Game.Scripts.UI.Planets;
 using Modules.Planets;
 using Zenject;
 
@@ -17,7 +16,6 @@ namespace Game.Scripts.UI.DI
             _planetViews = planetViews;
             _planets = planets;
         }
-
 
         public override void InstallBindings()
         {

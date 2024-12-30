@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using Game.Scripts.UI.Animations;
 using Game.Scripts.UI.Popups;
 using Modules.Planets;
@@ -10,18 +11,20 @@ namespace Game.Scripts.UI.Planets
     //Mvp Passive View
     public class PlanetViewPresenter : IInitializable, IDisposable
     {
+        private readonly StringBuilder _sb;
         private readonly PlanetView _planetView;
         private readonly IPlanet _planet;
-        private readonly IMoneyCollectAnimationService _moneyCollectAnimationService;
+        private readonly IMoneyCollectAnimator _moneyCollectAnimator;
         private readonly PlanetPopupOpener _planetPopupOpener;
 
         public PlanetViewPresenter(PlanetView planetView, IPlanet planet,
-            IMoneyCollectAnimationService moneyCollectAnimationService, PlanetPopupOpener planetPopupOpener)
+            IMoneyCollectAnimator moneyCollectAnimator, PlanetPopupOpener planetPopupOpener)
         {
             _planet = planet;
-            _moneyCollectAnimationService = moneyCollectAnimationService;
+            _moneyCollectAnimator = moneyCollectAnimator;
             _planetPopupOpener = planetPopupOpener;
             _planetView = planetView;
+            _sb = new StringBuilder();
         }
 
         void IInitializable.Initialize()
@@ -47,6 +50,7 @@ namespace Game.Scripts.UI.Planets
             _planet.OnUnlocked += OnUnlocked;
             _planet.OnIncomeTimeChanged += OnIncomeTimeChanged;
             _planet.OnIncomeReady += OnIncomeReady;
+            _planet.OnGathered += OnGathered;
         }
 
         private void Unsubscribe()
@@ -57,6 +61,12 @@ namespace Game.Scripts.UI.Planets
             _planet.OnUnlocked -= OnUnlocked;
             _planet.OnIncomeTimeChanged -= OnIncomeTimeChanged;
             _planet.OnIncomeReady -= OnIncomeReady;
+            _planet.OnGathered -= OnGathered;
+        }
+
+        private void OnGathered(int amount)
+        {
+            _moneyCollectAnimator.PlayCollectAnimation(_planetView.MoneyAnimationStartPoint);
         }
 
         private void OnIncomeTimeChanged(float remainingTime)
@@ -92,7 +102,6 @@ namespace Game.Scripts.UI.Planets
             if (_planet.IsIncomeReady)
             {
                 _planet.GatherIncome();
-                _moneyCollectAnimationService.StartAnimation(_planetView.MoneyAnimationStartPoint);
             }
         }
 
@@ -106,28 +115,29 @@ namespace Game.Scripts.UI.Planets
             _planetPopupOpener.OpenFor(_planet);
         }
 
-        private static string ToTimerHours(float inputSeconds)
+        private string ToTimerHours(float inputSeconds)
         {
-            var time = inputSeconds;
-            var hours = ((int)time / 60 / 60) % 24;
-            var minutes = (((int)time / 60) % 60);
-            var seconds = (int)time % 60;
+            var timespan = TimeSpan.FromSeconds(inputSeconds);
 
-            string result = string.Empty;
+            var hours = timespan.Hours;
+            var minutes = timespan.Minutes;
+            var seconds = timespan.Seconds;
+
+            _sb.Clear();
 
             if (hours > 0)
             {
-                result += $"{hours}h:";
+                _sb.Append(hours).Append("h:");
             }
 
             if (minutes > 0 || hours > 0)
             {
-                result += $"{minutes}m:";
+                _sb.Append(minutes).Append("m:");
             }
 
-            result += $"{seconds}s";
+            _sb.Append(seconds).Append("s");
 
-            return result;
+            return _sb.ToString();
         }
     }
 }

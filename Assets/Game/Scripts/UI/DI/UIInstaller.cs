@@ -12,18 +12,12 @@ namespace Game.Scripts.UI.DI
         private PlanetView[] _planetViews;
 
         [SerializeField]
-        private Transform _moneyAnimationTarget;
-
-        [SerializeField]
         private ParticleAnimator _particleAnimator;
 
         public override void InstallBindings()
         {
-            Container.Bind<IMoneyCollectAnimationService>().To<MoneyCollectAnimationService>()
-                .AsSingle().WithArguments(_particleAnimator, _moneyAnimationTarget);
-
             PlanetViewsInstaller.Install(Container, _planetViews);
-            MoneyViewInstaller.Install(Container);
+            MoneyViewInstaller.Install(Container, _particleAnimator);
             PlanetPopupInstaller.Install(Container);
         }
     }

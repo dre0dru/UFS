@@ -24,7 +24,8 @@ namespace Game.Scripts.UI.Popups
         public string IncomeText => $"Income: {_planet.MinuteIncome / 60}/sec";
         public string UpgradePriceText => $"{_planet.Price}";
         public bool CanUpgrade => _planet.CanUpgrade;
-        public string UpgradeButtonText => CanUpgrade ? $"Upgrade" : "Max Level Reached";
+        public bool IsMaxLevel => _planet.IsMaxLevel;
+        public string UpgradeButtonText => IsMaxLevel ? "Max Level Reached" : "Upgrade";
 
         public event Action InfoChanged;
 

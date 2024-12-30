@@ -15,6 +15,7 @@ namespace Game.Scripts.UI.Popups
         string IncomeText { get; }
         string UpgradePriceText { get; }
         bool CanUpgrade { get; }
+        bool IsMaxLevel { get; }
         string UpgradeButtonText { get; }
 
         event Action InfoChanged;
@@ -126,7 +127,7 @@ namespace Game.Scripts.UI.Popups
 
         private void SetPriceContainerState()
         {
-            _priceContainerGo.SetActive(_presenter.CanUpgrade);
+            _priceContainerGo.SetActive(!_presenter.IsMaxLevel);
         }
 
         private void OnCloseClick()
