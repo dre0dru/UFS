@@ -1,11 +1,12 @@
 using System.Collections.Generic;
+using Game.Scripts.App;
 using Modules.Entities;
 using UnityEngine;
 
 namespace SampleGame.Gameplay
 {
     //Can be extended
-    public sealed class ProductionOrder : MonoBehaviour
+    public sealed class ProductionOrder : MonoBehaviour, IEntityComponent
     {
         ///Variable
         [SerializeField]

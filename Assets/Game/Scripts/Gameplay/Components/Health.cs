@@ -1,9 +1,10 @@
+using Game.Scripts.App;
 using UnityEngine;
 
 namespace SampleGame.Gameplay
 {
     //Can be extended
-    public sealed class Health : MonoBehaviour
+    public sealed class Health : MonoBehaviour, IEntityComponent
     {
         ///Variable
         [field: SerializeField]
