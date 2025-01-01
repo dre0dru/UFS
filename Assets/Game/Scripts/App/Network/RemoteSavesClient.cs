@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.Networking;
 
 namespace Game.Scripts.App.Network
@@ -23,7 +24,14 @@ namespace Game.Scripts.App.Network
             request.downloadHandler = new DownloadHandlerBuffer();
             request.SetRequestHeader("Content-Type", "text/plain");
 
-            await request.SendWebRequest();
+            try
+            {
+                await request.SendWebRequest();
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Failed to upload save: {e}");
+            }
 
             return request.result == UnityWebRequest.Result.Success;
         }
@@ -34,7 +42,14 @@ namespace Game.Scripts.App.Network
 
             using var request = UnityWebRequest.Get(url);
 
-            await request.SendWebRequest();
+            try
+            {
+                await request.SendWebRequest();
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Failed to download save: {e}");
+            }
 
             if (request.result == UnityWebRequest.Result.Success)
             {

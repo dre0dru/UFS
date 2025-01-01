@@ -22,9 +22,10 @@ namespace Game.Scripts.App
 
         public override void InstallBindings()
         {
-            Container.BindInterfacesTo<RemoteGameRepository>().AsSingle();
+            Container.BindInterfacesTo<GameRepository>().AsSingle();
             Container.Bind<AesEncryptionService>().AsSingle().WithArguments(_aesPassword, _aesSalt);
             Container.Bind<RemoteSavesClient>().AsSingle().WithArguments(_serverUrl);
+            Container.Bind<LocalStorage>().AsSingle().WithArguments(Application.persistentDataPath);
         }
     }
 }
