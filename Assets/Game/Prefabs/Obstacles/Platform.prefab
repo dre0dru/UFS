@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 7845036276167105276}
   - component: {fileID: 1599025579162667576}
   - component: {fileID: 4998109996826579298}
+  - component: {fileID: 2647666811960421125}
+  - component: {fileID: 4527324316569533979}
+  - component: {fileID: 3318899908461851269}
   m_Layer: 3
   m_Name: <Platform>
   m_TagString: Platform
@@ -60,7 +63,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!61 &4998109996826579298
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -106,6 +109,52 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &2647666811960421125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240930164425400058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d041c9534524c109c78b442c2c6807b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _root: {fileID: 7845036276167105276}
+  _waypoints:
+  - {fileID: 5434138037557620653}
+  - {fileID: 7441270365842623162}
+  _movementComponent: {fileID: 4527324316569533979}
+  _stoppingDistance: 0.1
+--- !u!114 &4527324316569533979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240930164425400058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db6aa3fc34e9400fb3028c924c38a129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 1599025579162667576}
+  _speed: 5
+  _xAxisOnly: 0
+--- !u!114 &3318899908461851269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240930164425400058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e19fa902aaa4933ab2720d347c97ec4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementComponent: {fileID: 4527324316569533979}
 --- !u!1 &2402534428499199933
 GameObject:
   m_ObjectHideFlags: 0

@@ -240,6 +240,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4979841302588641904}
   - component: {fileID: 2682617834291874480}
+  - component: {fileID: 748799542298655499}
+  - component: {fileID: 9200163990433072025}
+  - component: {fileID: 3890864819017069223}
+  - component: {fileID: 4417694399291557853}
+  - component: {fileID: 930433895942919394}
   m_Layer: 6
   m_Name: Trampoline
   m_TagString: Untagged
@@ -309,3 +314,77 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &748799542298655499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595837930061912479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68133082261a4bcb818163fe3f82f60e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _forcePoint: {fileID: 4979841302588641904}
+  _cooldownTimer:
+    _time: 1
+  _areaRadius: 2
+  _force: 500
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 832
+--- !u!114 &9200163990433072025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595837930061912479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476272474d9149d6b0fd103b8a133ca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSource: {fileID: 1617741907949594362}
+  _audioClip: {fileID: 8300000, guid: 08ef3735b9527d54ab97d0e9fc9d505d, type: 3}
+  _tossComponent: {fileID: 748799542298655499}
+--- !u!114 &3890864819017069223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595837930061912479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cbc5112754345959cbec0ab13a4a3be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tossComponent: {fileID: 748799542298655499}
+  _triggerSensorComponent: {fileID: 4417694399291557853}
+--- !u!114 &4417694399291557853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595837930061912479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53cc8486f3ba440fae81c65184647900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &930433895942919394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595837930061912479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 880cd7c79a284064bdffe06875b7651b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tossComponent: {fileID: 748799542298655499}
