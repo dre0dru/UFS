@@ -44,9 +44,12 @@ namespace Game.Scripts.App
         {
             var (isSuccess, gameState) = await _repository.GetState(version);
 
-            foreach (var serializer in _serializers)
+            if (isSuccess)
             {
-                serializer.Deserialize(gameState);
+                foreach (var serializer in _serializers)
+                {
+                    serializer.Deserialize(gameState);
+                }
             }
 
             callback?.Invoke(isSuccess, version);

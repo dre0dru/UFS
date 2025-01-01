@@ -36,7 +36,7 @@ namespace Game.Scripts.App.Network
             return request.result == UnityWebRequest.Result.Success;
         }
 
-        public async UniTask<(bool isSuccess, string result)> DownloadSave(int version)
+        public async UniTask<string> DownloadSave(int version)
         {
             var url = $"{_url}/load?version={version}";
 
@@ -53,10 +53,10 @@ namespace Game.Scripts.App.Network
 
             if (request.result == UnityWebRequest.Result.Success)
             {
-                return (true, request.downloadHandler.text);
+                return request.downloadHandler.text;
             }
 
-            return (false, string.Empty);
+            return null;
         }
     }
 }
