@@ -1,7 +1,6 @@
-﻿using System.Text;
-using Modules.Ecryption;
+﻿using Modules.Ecryption;
 
-namespace Game.Scripts.App.Encryption
+namespace Game.Scripts.App
 {
     public class AesEncryptionService
     {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Modules.Entities;
 using SampleGame.Common;
+using SampleGame.Gameplay;
 using UnityEngine;
 
 namespace Game.Scripts.App
@@ -58,14 +59,37 @@ namespace Game.Scripts.App
             return snapshot;
         }
 
-        protected override void Deserialize(EntityWorldSnapshot snapshot)
+        protected override void Deserialize(EntityWorldSnapshot worldSnapshot)
         {
             _entityWorld.DestroyAll();
 
-            foreach (var entitySnapshot in snapshot.Entities)
+            var entities = SpawnEntities(worldSnapshot);
+
+            foreach (var (entity, snapshot) in entities)
             {
-                DeserializeEntity(entitySnapshot);
+                DeserializeEntity(entity, snapshot);
             }
+        }
+
+        private IEnumerable<(Entity entity, EntitySnapshot snapshot)> SpawnEntities(EntityWorldSnapshot worldSnapshot)
+        {
+            var result = new List<(Entity entity, EntitySnapshot snapshot)>(worldSnapshot.Entities.Count);
+
+            foreach (var snapshot in worldSnapshot.Entities)
+            {
+                if (!_entityCatalog.FindConfig(snapshot.ConfigId, out var config))
+                {
+                    Debug.LogError($"Entity config {snapshot.ConfigId} not found, skipping");
+                    continue;
+                }
+
+                var entity = _entityWorld.Spawn(config, snapshot.Position,
+                    snapshot.Rotation, snapshot.EntityId);
+
+                result.Add((entity, snapshot));
+            }
+
+            return result;
         }
 
         private EntitySnapshot SerializeEntity(Entity entity)
@@ -94,17 +118,8 @@ namespace Game.Scripts.App
             };
         }
 
-        private void DeserializeEntity(EntitySnapshot snapshot)
+        private void DeserializeEntity(Entity entity, EntitySnapshot snapshot)
         {
-            if (!_entityCatalog.FindConfig(snapshot.ConfigId, out var config))
-            {
-                Debug.LogError($"Entity config {snapshot.ConfigId} not found, skipping");
-                return;
-            }
-
-            var entity = _entityWorld.Spawn(config, snapshot.Position,
-                snapshot.Rotation, snapshot.EntityId);
-
             _components.Clear();
             entity.GetComponentsInChildren<IEntityComponent>(true, _components);
 

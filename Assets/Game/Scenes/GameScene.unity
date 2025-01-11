@@ -1224,7 +1224,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers:
   - {fileID: 11400000, guid: f2dd28a4344494b3289a84529f4d562d, type: 2}
-  - {fileID: 11400000, guid: e19b72c35caaa114c9247fc185306492, type: 2}
   - {fileID: 11400000, guid: 12ea2fb61ca920041911fc39ed3174d7, type: 2}
   _monoInstallers:
   - {fileID: 2121707071}

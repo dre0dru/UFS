@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
-using Game.Scripts.App.Encryption;
-using Game.Scripts.App.Network;
 using Newtonsoft.Json;
 using UnityEngine;
 

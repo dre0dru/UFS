@@ -1,6 +1,4 @@
-﻿using Game.Scripts.App.Encryption;
-using Game.Scripts.App.Network;
-using UnityEngine;
+﻿using UnityEngine;
 using Zenject;
 
 namespace Game.Scripts.App

@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Game.Scripts.App.Network
+namespace Game.Scripts.App
 {
     public class RemoteSavesClient
     {
