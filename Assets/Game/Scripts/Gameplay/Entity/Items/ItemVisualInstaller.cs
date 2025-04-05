@@ -16,7 +16,13 @@ namespace Game.Gameplay
         
         public override void Install(IEntity entity)
         {
-            //TODO
+            //TODO понимаю, что по названию не совсем подходит, но не хочется
+            //еще один тип данных создавать чисто для визуала, поэтому переиспользую, что есть
+            entity.AddAnimationTransform(_visual.transform);
+            entity.AddAudioSource(_audioSource);
+
+            entity.AddBehaviour<ItemAudioPickupBehaviour>();
+            entity.AddBehaviour(new ItemVfxPickupBehaviour(_vfx));
         }
     }
 }

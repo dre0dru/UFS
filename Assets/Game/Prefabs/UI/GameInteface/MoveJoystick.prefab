@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2685751539036889992}
   - component: {fileID: 2685751539036889999}
   - component: {fileID: 3884903729817931586}
+  - component: {fileID: 3277347557859720871}
   m_Layer: 5
   m_Name: MoveJoystick
   m_TagString: Untagged
@@ -33,7 +34,6 @@ RectTransform:
   m_Children:
   - {fileID: 2685751539308576758}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -97,6 +97,19 @@ MonoBehaviour:
   snapY: 0
   background: {fileID: 2685751539308576758}
   handle: {fileID: 2685751539362176503}
+--- !u!114 &3277347557859720871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2685751539036889996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 132ba2e4b9e94cc0a53f000d2270c5fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _joystick: {fileID: 3884903729817931586}
 --- !u!1 &2685751539308576757
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +142,6 @@ RectTransform:
   m_Children:
   - {fileID: 2685751539362176503}
   m_Father: {fileID: 2685751539036889997}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -205,7 +217,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2685751539308576758}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

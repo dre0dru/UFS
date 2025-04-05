@@ -48,7 +48,7 @@ namespace Modules.Gameplay
         private async UniTaskVoid UnspawnTrail(TrailRenderer trail)
         {
             trail.transform.parent = null;
-            await UniTask.Delay(TimeSpan.FromSeconds(trail.time), DelayType.DeltaTime);
+            await UniTask.Delay(TimeSpan.FromSeconds(trail.time), DelayType.DeltaTime, cancellationToken: destroyCancellationToken);
             Destroy(trail.gameObject);
         }
     }

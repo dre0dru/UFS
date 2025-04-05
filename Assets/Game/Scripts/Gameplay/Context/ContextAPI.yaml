@@ -1,0 +1,17 @@
+header: ContextAPI
+contextType: IContext
+aggressiveInlining: true
+
+namespace: Game.Gameplay
+className: ContextAPI
+directory: Assets/Game/Scripts/Gameplay/Context
+
+imports:
+- UnityEngine
+- Atomic.Contexts
+- Atomic.Entities
+- Atomic.Elements
+
+values:
+- Player: IEntity
+- Score: IReactiveVariable<int>

@@ -1,0 +1,79 @@
+header: EntityAPI
+entityType: IEntity
+aggressiveInlining: true
+
+namespace: Game.Gameplay
+className: EntityAPI
+directory: Assets/Game/Scripts/Gameplay/Entity
+ 
+imports:
+- UnityEngine
+- Atomic.Entities
+- Atomic.Elements
+- Modules.Gameplay
+
+tags:
+- Player
+- Enemy
+- Resource
+- Damageable
+- Melee
+- Ranged
+- Projectile
+- PickUppable
+
+values:
+# Structure
+- Transform: Transform
+
+# Health
+- Health: Health
+- DamageTakenEvent: IEvent<TakeDamageArgs>
+- DeathTakenEvent: IEvent<TakeDamageArgs>
+
+# SFX
+- AudioSource: AudioSource
+
+# Animations
+- Animator: Animator
+- AnimationEventReceiver: AnimationEventReceiver
+- AnimationTransform: Transform
+
+# Aiming
+- AimingDirection: IVariable<Vector2>
+
+# Movement
+- MovementDirection: IVariable<Vector2>
+- MovementSpeed: IValue<float>
+- MovementCondition: IExpression<bool>
+- RotationSpeed: IValue<float>
+- RotationCondition: IExpression<bool>
+
+# TODO разделить для пистолета/кулаков отдельно?
+# Combat
+- AttackCondition: IExpression<bool>
+- AttackEvent: IEvent
+- AttackAction: IAction
+- Weapon: IEntity
+- Damage: IValue<int>
+- FirePoint: Transform
+- SpreadAngle: IValue<float>
+- AttackCooldown: Cooldown
+- Ammo: Ammo
+- ProjectilePrefab: SceneEntity
+- AttackTarget: IVariable<IEntity>
+- AttackDistance: IValue<float>
+- RaycastLayer: IValue<LayerMask>
+  
+# Lifecycle
+- Lifetime: Cooldown
+- DestroyAction: IAction
+
+# Physics
+- CollisionReceiver: CollisionEventReceiver
+- TriggerReceiver: TriggerEventReceiver
+  
+# Items
+- PickupCondition: IExpression<IEntity, bool>
+- PickupItemAction: IAction<IEntity>
+- PickupItemEvent: IEvent

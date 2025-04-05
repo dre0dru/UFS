@@ -8,7 +8,8 @@ namespace Game.Gameplay
     {
         public override void Install(IEntity entity)
         {
-            // TODO
+            entity.AddPlayerTag();
+            entity.AddTransform(transform);
         }
     }
 }

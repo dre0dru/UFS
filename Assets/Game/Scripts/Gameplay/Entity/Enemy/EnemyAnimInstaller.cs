@@ -16,7 +16,17 @@ namespace Game.Gameplay
         
         public override void Install(IEntity entity)
         {
-            //TODO
+            entity.SetAnimationTransform(transform);
+
+            entity.SetAnimator(_animator);
+            entity.SetAnimationEventReceiver(_animationReceiver);
+
+            entity.AddBehaviour<MovementAnimationBehaviour>();
+            entity.AddBehaviour<ApplyRootMotionBehaviour>();
+            entity.AddBehaviour<TakeDamageAnimationBehaviour>();
+            entity.AddBehaviour<DeathAnimationBehaviour>();
+            entity.AddBehaviour<AttackAnimationBehaviour>();
+            entity.AddBehaviour(new TriggerWeaponAttackOnAnimationBehaviour(fireEvent));
         }
     }
 }

@@ -31,7 +31,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1662961120376883892}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -107,7 +106,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1662961120376883892}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -164,7 +162,7 @@ GameObject:
   - component: {fileID: 1662961120376883898}
   - component: {fileID: 1662961120376883893}
   - component: {fileID: 1662961120376883899}
-  - component: {fileID: 3008561469758032239}
+  - component: {fileID: 1348344711075610820}
   m_Layer: 5
   m_Name: HealthScreen
   m_TagString: Untagged
@@ -187,7 +185,6 @@ RectTransform:
   - {fileID: 1417707064}
   - {fileID: 2072141728}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -247,7 +244,7 @@ MonoBehaviour:
   staticIndication: {fileID: 1662961120376883893}
   dynamicIndication: {fileID: 2072141730}
   takeDamageView: {fileID: 1417707065}
---- !u!114 &3008561469758032239
+--- !u!114 &1348344711075610820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -256,6 +253,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1662961120376883895}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9add3363e2ea45848136fe3880277d6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f6a53d3b3ea47c3ab4f0d57ff18b06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthScreen: {fileID: 1662961120376883899}

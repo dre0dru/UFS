@@ -75,6 +75,9 @@ GameObject:
   - component: {fileID: 2293162354956507346}
   - component: {fileID: 2852948263122311593}
   - component: {fileID: 7006393198650432515}
+  - component: {fileID: 2588955187321929301}
+  - component: {fileID: 8467741718646309014}
+  - component: {fileID: 7531092544755553111}
   m_Layer: 12
   m_Name: Bullet
   m_TagString: Bullet
@@ -158,6 +161,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05ba46b9e4c74f868c7bb76a6bbf8de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2588955187321929301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829669804357326195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3142498ee69840069f3a93c11b1e1f75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  installOnAwake: 1
+  installInEditMode: 0
+  disposeValues: 1
+  installers:
+  - {fileID: 7531092544755553111}
+  - {fileID: 486307684219909320}
+  _onlySelectedGizmos: 0
+  _onlyEditModeGizmos: 0
+--- !u!114 &8467741718646309014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829669804357326195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 603a745f80e14d1d8cd57cf70a50187f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entities:
+  - {fileID: 2588955187321929301}
+--- !u!114 &7531092544755553111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8829669804357326195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c88a17cfda49079736c665cb4f0afb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifeTime:
+    _current: 3
+    _duration: 3
+  _moveSpeed: 45
+  _damage: 1
+  _collisionEventReceiver: {fileID: 7006393198650432515}
+  _root: {fileID: 6795422085097260040}
 --- !u!1001 &2426699191576222108
 PrefabInstance:
   m_ObjectHideFlags: 0

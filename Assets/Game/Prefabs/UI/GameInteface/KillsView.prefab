@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5426925789724831932}
   - component: {fileID: 4183581637371536099}
-  - component: {fileID: 2448601396393003244}
+  - component: {fileID: 3351370005412373761}
+  - component: {fileID: 5034716372620634398}
   m_Layer: 5
   m_Name: KillsView
   m_TagString: Untagged
@@ -47,7 +48,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 230523248208669166}
   m_CullTransparentMesh: 1
---- !u!114 &2448601396393003244
+--- !u!114 &3351370005412373761
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -56,10 +57,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 230523248208669166}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34435db6ae9c40beac769e3f9708fcb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4382e398a54947949fa7195681567524, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _text: {fileID: 4794328611557280731}
+  _scoreText: {fileID: 4794328611557280731}
+--- !u!114 &5034716372620634398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230523248208669166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79bf050894043bba9494c94fa305c46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreView: {fileID: 3351370005412373761}
 --- !u!1 &6511748489018863136
 GameObject:
   m_ObjectHideFlags: 0

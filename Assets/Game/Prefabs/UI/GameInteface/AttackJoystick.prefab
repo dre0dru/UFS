@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 4813481782977975925}
   - component: {fileID: 2386560930156698065}
   - component: {fileID: 6474205814169640530}
+  - component: {fileID: 1621317777698817677}
   m_Layer: 5
   m_Name: AttackJoystick
   m_TagString: Untagged
@@ -247,3 +248,19 @@ MonoBehaviour:
   snapY: 0
   background: {fileID: 8064200227391955904}
   handle: {fileID: 1589536816864137411}
+--- !u!114 &1621317777698817677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5456952372480117797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed597d35a4e448396c63ef8a0bff50f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _joystick: {fileID: 6474205814169640530}
+  _attackCooldown:
+    _current: 0
+    _duration: 0.5

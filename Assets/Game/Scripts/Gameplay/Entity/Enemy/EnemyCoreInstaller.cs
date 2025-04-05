@@ -1,4 +1,6 @@
+using Atomic.Elements;
 using Atomic.Entities;
+using UnityEngine;
 
 namespace Game.Gameplay
 {
@@ -6,7 +8,11 @@ namespace Game.Gameplay
     {
         public override void Install(IEntity entity)
         {
-            //TODO
+            entity.AddEnemyTag();
+            entity.AddTransform(transform);
+            entity.AddAttackTarget(new BaseVariable<IEntity>());
+            entity.AddBehaviour<IncreaseScoreOnDeathBehaviour>();
+            entity.AddBehaviour<AttackTargetBehaviour>();
         }
     }
 }

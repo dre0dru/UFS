@@ -28,7 +28,13 @@ namespace Game.Gameplay
         
         public override void Install(IEntity entity)
         {
-            //TODO
+            entity.AddAudioSource(_audioSource);
+
+            entity.AddBehaviour(new DeathSoundBehaviour(_deathClips));
+            entity.AddBehaviour(new BodyFallSoundBehaviour(_bodyFallClip));
+            entity.AddBehaviour(new TakeDamageSoundTypeBehaviour(_meleeDamageClip, _bulletDamageClip));
+            entity.AddBehaviour(new TakeDamageSoundBehaviour(_damageClips));
+            entity.AddBehaviour(new AttackSoundBehaviour(_damageClips));
         }
     }
 }
